@@ -5,6 +5,7 @@ const path = require("path");
 const { errorHandler, notFound } = require("./middleware/errorMiddleware.js");
 const cors = require("cors");
 const schemesRouter = require("./routes/SchemesRoute.js");
+const vouchersRouter = require("./routes/VoucherRoute.js");
 const connectDB = require("./config/db.js");
 dotenv.config();
 
@@ -21,8 +22,10 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/schemes", schemesRouter);
+app.use("/api/vouchers", vouchersRouter);
 // --------------------------deployment------------------------------
 
 if (process.env.NODE_ENV === "production") {
