@@ -7,6 +7,7 @@ const vouchersSchema = new mongoose.Schema({
   mcc: Number,
   issueDate: { type: Date },
   expiry: { type: Date },
+  redemptionDate: { type: Date },
   maxAmount: Number,
   usedAmount: Number,
   status: String,

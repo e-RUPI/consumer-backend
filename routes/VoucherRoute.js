@@ -23,6 +23,10 @@ router.get("/", async (req, res) => {
       filter.eRupiId = req.query.eRupiId; // Apply eRupiId filter
     }
 
+    if (req.query.redemptionDate) {
+      filter.redemptionDate = req.query.redemptionDate; // Apply redemptionDate filter
+    }
+
     // Apply sorting
     const sort = {};
 
