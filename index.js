@@ -25,9 +25,9 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/api/schemes", schemesRouter);
-app.use("/api/vouchers", vouchersRouter);
-app.use("/api/users", usersRouter);
+app.use("/schemes", schemesRouter);
+app.use("/vouchers", vouchersRouter);
+app.use("/users", usersRouter);
 // --------------------------deployment------------------------------
 
 if (process.env.NODE_ENV === "production") {
